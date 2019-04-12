@@ -1,7 +1,39 @@
 <html>
 <head>
   <title>Smart Mirror</title>
+  <style type="text/css">
+    body {
+        background-color: #f0f0f2;
+        margin: 0;
+        padding: 0;
+        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        
+    }
+    div {
+        width: 600px;
+        margin: 5em auto;
+        padding: 50px;
+        background-color: #fff;
+        border-radius: 1em;
+    }
+    a:link, a:visited {
+        color: #38488f;
+        text-decoration: none;
+    }
+    @media (max-width: 700px) {
+        body {
+            background-color: #fff;
+        }
+        div {
+            width: auto;
+            margin: 0 auto;
+            border-radius: 0;
+            padding: 1em;
+        }
+    }
+    </style>
 </head>
+
 <body>
 <script>
   window.fbAsyncInit = function() {
@@ -15,7 +47,7 @@
 </script>
 <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 
-<center>
+<div>
 <h1>SmartMirror</h1>
 <h3>
 תן לייק ושיתוף לדף וקבל 10% הנחה
@@ -40,7 +72,7 @@ foo
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v3.2&appId=372205130054387&autoLogAppEvents=1"></script>
 <div class="fb-like" data-href="https://www.facebook.com/RelitachIL" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 
-</center>
+</div>
 
 </body>
 </html>
