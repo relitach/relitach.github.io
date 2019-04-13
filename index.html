@@ -42,7 +42,11 @@ const myParam = urlParams.get('pid');
 document.getElementById("mypid").innerHTML = myParam;
 </script>
 
-The picture id is: <span id="mypid"></span>
+The picture id is: 
+<script>
+document.write(myParam)
+</script>
+
 <br>
 <br>
 
