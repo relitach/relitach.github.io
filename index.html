@@ -41,6 +41,12 @@ url = url.replace("?", '');
 alert(url);
 </script>
 
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const myParam = urlParams.get('pid');
+alert(myParam);
+</script>
+
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v3.2&appId=372205130054387&autoLogAppEvents=1"></script>
 <div class="fb-like" data-href="https://www.facebook.com/RelitachIL" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
