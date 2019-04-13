@@ -38,8 +38,12 @@
 <script>
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('pid');
-alert(myParam);
+<!-- alert(myParam); -->
+document.getElementById("mypid").innerHTML = myParam;
 </script>
+
+"The picture id is: " <span id="myText"></span>
+
 
 <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="arieltest">
 
