@@ -39,6 +39,38 @@
   };
   firebase.initializeApp(config);
 </script>
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script>
+
+  <script>
+    // TODO: Replace the following with your app's Firebase project configuration
+    var firebaseConfig = {
+      // ...
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  
+  <script>
+  // Initialize Firebase with a "default" Firebase project
+var defaultProject = firebase.initializeApp(firebaseConfig);
+
+console.log(defaultProject.name);  // "[DEFAULT]"
+
+// Option 1: Access Firebase services via the defaultProject variable
+var defaultStorage = defaultProject.storage();
+var defaultDatabase = defaultProject.database();
+
+// Option 2: Access Firebase services using shorthand notation
+defaultStorage = firebase.storage();
+defaultDatabase = firebase.database();
+</script>
 
 
 <div style="width: 600px;
