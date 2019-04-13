@@ -29,7 +29,7 @@
 <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
 <script>
   // Initialize Firebase
-  var config = {
+  var firebaseConfig = {
     apiKey: "AIzaSyAWbO0RUX4CBfUm7Or8DHuIm-V9kDE9grk",
     authDomain: "smartmirror-a799a.firebaseapp.com",
     databaseURL: "https://smartmirror-a799a.firebaseio.com",
@@ -37,7 +37,7 @@
     storageBucket: "smartmirror-a799a.appspot.com",
     messagingSenderId: "721019023070"
   };
-  firebase.initializeApp(config);
+  var defaultProject = firebase.initializeApp(config);
 </script>
   <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
@@ -49,28 +49,18 @@
   <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script>
 
   <script>
-    // TODO: Replace the following with your app's Firebase project configuration
-    var firebaseConfig = {
-      // ...
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+	console.log(defaultProject.name);  // "[DEFAULT]"
+	
+	// Option 1: Access Firebase services via the defaultProject variable
+	var defaultStorage = defaultProject.storage();
+	var defaultDatabase = defaultProject.database();
+
+	// Option 2: Access Firebase services using shorthand notation
+	defaultStorage = firebase.storage();
+	defaultDatabase = firebase.database();
   </script>
   
-  <script>
-  // Initialize Firebase with a "default" Firebase project
-var defaultProject = firebase.initializeApp(firebaseConfig);
 
-console.log(defaultProject.name);  // "[DEFAULT]"
-
-// Option 1: Access Firebase services via the defaultProject variable
-var defaultStorage = defaultProject.storage();
-var defaultDatabase = defaultProject.database();
-
-// Option 2: Access Firebase services using shorthand notation
-defaultStorage = firebase.storage();
-defaultDatabase = firebase.database();
-</script>
 
 
 <div style="width: 600px;
