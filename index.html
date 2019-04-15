@@ -27,18 +27,7 @@
 <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var firebaseConfig = {
-    apiKey: "AIzaSyAWbO0RUX4CBfUm7Or8DHuIm-V9kDE9grk",
-    authDomain: "smartmirror-a799a.firebaseapp.com",
-    databaseURL: "https://smartmirror-a799a.firebaseio.com",
-    projectId: "smartmirror-a799a",
-    storageBucket: "smartmirror-a799a.appspot.com",
-    messagingSenderId: "721019023070"
-  };
-  var defaultProject = firebase.initializeApp(firebaseConfig);
-</script>
+
   <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
@@ -49,15 +38,28 @@
   <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script>
 
   <script>
-	console.log(defaultProject.name);  // "[DEFAULT]"
+    // TODO: Replace the following with your app's Firebase project configuration
+    var firebaseConfig = {
+    apiKey: "AIzaSyAWbO0RUX4CBfUm7Or8DHuIm-V9kDE9grk",
+    authDomain: "smartmirror-a799a.firebaseapp.com",
+    databaseURL: "https://smartmirror-a799a.firebaseio.com",
+    projectId: "smartmirror-a799a",
+    storageBucket: "smartmirror-a799a.appspot.com",
+    messagingSenderId: "721019023070"
+  };
+    // Initialize Firebase
+    var defaultProject = firebase.initializeApp(firebaseConfig);
 	
-	// Option 1: Access Firebase services via the defaultProject variable
-	var defaultStorage = defaultProject.storage();
-	var defaultDatabase = defaultProject.database();
+	
+	console.log(defaultProject.name);  // "[DEFAULT]"
 
-	// Option 2: Access Firebase services using shorthand notation
-	defaultStorage = firebase.storage();
-	defaultDatabase = firebase.database();
+// Option 1: Access Firebase services via the defaultProject variable
+var defaultStorage = defaultProject.storage();
+var defaultDatabase = defaultProject.database();
+
+// Option 2: Access Firebase services using shorthand notation
+defaultStorage = firebase.storage();
+defaultDatabase = firebase.database();
   </script>
   
 
