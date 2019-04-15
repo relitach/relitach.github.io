@@ -47,19 +47,17 @@
     storageBucket: "smartmirror-a799a.appspot.com",
     messagingSenderId: "721019023070"
   };
-    // Initialize Firebase
-    var defaultProject = firebase.initializeApp(firebaseConfig);
-	
-	
-	console.log(defaultProject.name);  // "[DEFAULT]"
 
-// Option 1: Access Firebase services via the defaultProject variable
-var defaultStorage = defaultProject.storage();
-var defaultDatabase = defaultProject.database();
+  firebase.initializeApp(firebaseConfig);
 
-// Option 2: Access Firebase services using shorthand notation
-defaultStorage = firebase.storage();
-defaultDatabase = firebase.database();
+  // Get a reference to the database service
+  var database = firebase.database();
+  
+  var userId = firebase.auth().currentUser.uid;
+  return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+  var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+  // ...
+});
   </script>
   
 
