@@ -53,12 +53,32 @@
   // Get a reference to the database service
   var database = firebase.database();
   
-  var userId = firebase.auth().currentUser.uid;
-  return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-  var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-  // ...
+ // var userId = firebase.auth().currentUser.uid;
+ database.ref('/pic_id_to_link/' + '20190413_225037').once('value').then(function(snapshot) {
+  //var picURL = ( snapshot.val() && snapshot.val().username) || 'Anonymous';
+  var picURL = snapshot.val();
+  document.getElementById("my_image").src = picURL;
+  //$("#picture").attr("src", picURL);
+  alert(picURL);
 });
+  
+  
+  console.log(database);
+
   </script>
+  
+  <div id="mImageBox">
+<!--<img id='my_image' src="https://www.w3schools.com/images/w3schools_green.jpg" alt='' width="auto" height="auto" onclick="fbs_click(this)"/>-->
+</div>
+
+<script>
+     function fbs_click(TheImg) {
+     u=TheImg.src;
+     // t=document.title;
+    t=TheImg.getAttribute('alt');
+    window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;
+}
+</script>
   
 
 
@@ -75,8 +95,8 @@
 <script>
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('pid');
-<!-- alert(myParam); -->
-document.getElementById("mypid").innerHTML = myParam;
+alert(myParam);
+<!--document.getElementById("mypid").innerHTML = myParam;-->
 </script>
 
 The picture id is: 
@@ -88,8 +108,12 @@ document.write(myParam)
 <br>
 
 
-<img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="arieltest">
-
+  <div id="mImageBox">
+  <img width=250 height=250 id="my_image" src="https://www.w3schools.com/images/w3schools_green.jpg" alt="arieltest" onclick="fbs_click(this)">
+<!--<img id='my_image' src="https://www.w3schools.com/images/w3schools_green.jpg" alt='' width="auto" height="auto" onclick="fbs_click(this)"/>-->
+</div>
+<!--<img width=250 height=250 id="my_image" src="https://www.w3schools.com/images/w3schools_green.jpg" alt="arieltest">-->
+<h1 onclick="fbs_click(TODO)> aviiiiiii</h1>
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v3.2&appId=372205130054387&autoLogAppEvents=1"></script>
 <div class="fb-like" data-href="https://www.facebook.com/RelitachIL" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
