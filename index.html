@@ -25,15 +25,12 @@
   };
 </script>
 <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
-
 <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
-
   <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script>
-
   <script>
     var firebaseConfig = {
     apiKey: "AIzaSyAWbO0RUX4CBfUm7Or8DHuIm-V9kDE9grk",
@@ -56,23 +53,8 @@
   document.getElementById("my_image").src = picURL;
   // alert(picURL);
 });
-  
-  
   console.log(database);
-
   </script>
-
-<script>
-     function fbs_click(TheImg) {
-     u=TheImg.src;
-     // t=document.title;
-    t=TheImg.getAttribute('alt');
-    window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;
-}
-</script>
-  
-
-
 
 <div style="width: 600px;
         margin: 5em auto;
@@ -83,8 +65,6 @@
 <h1>SmartMirror</h1>
 <h3>תן לייק ושיתוף לדף וקבל 10% הנחה</h3>
 
-
-
 <br>
 <br>
 
@@ -93,11 +73,45 @@
 
 </div>
 
-<h1 onclick="fbs_click(this)"> שתף תמונה</h1>
+<h1 onclick="fbs_click(TheImg)"> שתף תמונה</h1>
+<script>
+  function fbs_click(TheImg) {
+  u=TheImg.src;
+ t=TheImg.getAttribute('alt');
+ window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;
+}
+</script>
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v3.2&appId=372205130054387&autoLogAppEvents=1"></script>
 <div class="fb-like" data-href="https://www.facebook.com/RelitachIL" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 
+
+<script type="text/javascript">
+  function publishOnFacebook() {
+  FB.ui(
+    {
+      method: 'feed',
+      name: 'Facebook Dialogs',
+      link: 'http://localhost/',
+      picture: 'http://fbrell.com/f8.jpg',
+      caption: 'Reference Documentation',
+      description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
+    },
+    function(response) {
+      if (response && response.post_id) {
+        alert('Post was published.');
+      } else {
+        alert('Post was not published.');
+      }
+    }
+  );
+  }
+  </script>
+  
+  <a href="#" onClick="publishOnFacebook()">
+      <i class="icons icon-facebook-big"></i></a>
+
+      
 </center>
 </div>
 
