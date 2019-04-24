@@ -63,13 +63,13 @@
         border-radius: 1em;">
 <center>
 <h1>SmartMirror</h1>
-<h3>תן לייק ושיתוף לדף וקבל 10% הנחה</h3>
-
+<h3>תן לייק ושיתוף לדף וקבל 5% הנחה</h3>
+<h3>לחץ על התמונה לשיתוף בפייסבוק</h3>
 <br>
 <br>
 
   <div id="mImageBox">
-  <img width=250 height=250 id="my_image" src="http://smpn14-bandung.sch.id/images/loader.gif" alt="arieltest" onclick="fbs_click(this)">
+  <img width=400 height=400 id="my_image" src="http://smpn14-bandung.sch.id/images/loader.gif" onclick="fbs_click(this)">
 
 </div>
 
@@ -81,12 +81,8 @@
  window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;
 }
 </script>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v3.2&appId=372205130054387&autoLogAppEvents=1"></script>
-<div class="fb-like" data-href="https://www.facebook.com/RelitachIL" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 
-
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   function publishOnFacebook() {
   FB.ui(
     {
@@ -107,9 +103,14 @@
   );
   }
   </script>
-  
-  <a href="#" onClick="publishOnFacebook()">
-      <i class="icons icon-facebook-big"></i>תמונה</a>
+
+  <h1 onClick="publishOnFacebook()">לפייסבוק</h1> -->
+
+
+      <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v3.2&appId=372205130054387&autoLogAppEvents=1"></script>
+<div class="fb-like" data-href="https://www.facebook.com/RelitachIL" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+
 
 
 </center>
