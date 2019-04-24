@@ -54,7 +54,7 @@
   database.ref('/pic_id_to_link/' + myParam).once('value').then(function(snapshot) {
   var picURL = snapshot.val();
   document.getElementById("my_image").src = picURL;
-  alert(picURL);
+  // alert(picURL);
 });
   
   
@@ -83,17 +83,7 @@
 <h1>SmartMirror</h1>
 <h3>תן לייק ושיתוף לדף וקבל 10% הנחה</h3>
 
-<!-- <script>
-const urlParams = new URLSearchParams(window.location.search);
-const myParam = urlParams.get('pid');
-alert(myParam);
-document.getElementById("mypid").innerHTML = myParam;
-</script> -->
 
-<!-- The picture id is: 
-<script>
-document.write(myParam)
-</script> -->
 
 <br>
 <br>
