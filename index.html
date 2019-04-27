@@ -70,7 +70,7 @@
 
   <div id="mImageBox">
   <img width=300 height=400 id="my_image" src="http://smpn14-bandung.sch.id/images/loader.gif" onclick="fbs_click(this)">
-
+  <img width=300 height=400 id="my_image" src="http://smpn14-bandung.sch.id/images/loader.gif" onclick="postFeed()">
 </div>
 
 <script>
@@ -81,29 +81,7 @@
 }
 </script>
 
-<!-- <script type="text/javascript">
-  function publishOnFacebook() {
-  FB.ui(
-    {
-      method: 'feed',
-      name: 'Facebook Dialogs',
-      link: 'http://localhost/',
-      picture: 'http://fbrell.com/f8.jpg',
-      caption: 'Reference Documentation',
-      description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
-    },
-    function(response) {
-      if (response && response.post_id) {
-        alert('Post was published.');
-      } else {
-        alert('Post was not published.');
-      }
-    }
-  );
-  }
-  </script>
 
-  <h1 onClick="publishOnFacebook()">לפייסבוק</h1> -->
   <br>
   <br>
 
@@ -111,7 +89,29 @@
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v3.2&appId=372205130054387&autoLogAppEvents=1"></script>
 <div class="fb-like" data-href="https://www.facebook.com/RelitachIL" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 
-
+<script>
+// POST A FEED WITH DIALOG using FB.ui
+function postFeed() {
+   FB.ui(
+    {
+      method: 'feed',
+      name: 'Facebook Dialogs',
+      link: 'http://developers.facebook.com/docs/reference/dialogs/',
+      picture: 'http://fbrell.com/f8.jpg',
+      caption: 'Reference Documentation',
+      description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
+    },
+    function(response) {
+      if (response && response.post_id) {
+        alert('Succeeded to post');
+      }
+      else {
+        alert('Failed to post');
+      }
+    }
+  );
+}
+</script>
 
 </center>
 </div>
