@@ -92,16 +92,17 @@
 <script>
 // POST A IMAGE WITH DIALOG using FB.api
 function postImage1() {
-  var wallPost = {
-    message: "Test to post a photo",
-    picture: "http://www.photographyblogger.net/wp-content/uploads/2010/05/flower29.jpg"
-  };
-  FB.api('/me/feed', 'post', wallPost , function(response) {
-    if (!response || response.error) {
-      alert('Failure! ' + response.status + ' You may logout once and try again');
-    } else {
-      alert('Success! Post ID: ' + response);
-    }
+  FB.api('/me/albums', function(response) {
+    var album = response.data[0]; // Now, upload the image to first found album for easiness.
+    var action_url = 'https://graph.facebook.com/' + album.id + '/photos?access_token=' +  accessToken;
+    var form = document.getElementById('upload-photo-form');
+    form.setAttribute('action', action_url);
+
+    // This does not work because of security reasons. Choose the local file manually.
+    // var file = document.getElementById('upload-photo-form-file');
+    // file.setAttribute('value', "/Users/nseo/Desktop/test_title_03.gif")
+
+    form.submit();
   });
 }
 </script>
