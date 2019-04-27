@@ -90,26 +90,19 @@
 <div class="fb-like" data-href="https://www.facebook.com/RelitachIL" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 
 <script>
-// POST A FEED WITH DIALOG using FB.ui
-function postFeed() {
-   FB.ui(
-    {
-      method: 'feed',
-      name: 'Facebook Dialogs',
-      link: 'http://developers.facebook.com/docs/reference/dialogs/',
-      picture: 'http://fbrell.com/f8.jpg',
-      caption: 'Reference Documentation',
-      description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
-    },
-    function(response) {
-      if (response && response.post_id) {
-        alert('Succeeded to post');
-      }
-      else {
-        alert('Failed to post');
-      }
+// POST A IMAGE WITH DIALOG using FB.api
+function postImage1() {
+  var wallPost = {
+    message: "Test to post a photo",
+    picture: "http://www.photographyblogger.net/wp-content/uploads/2010/05/flower29.jpg"
+  };
+  FB.api('/me/feed', 'post', wallPost , function(response) {
+    if (!response || response.error) {
+      alert('Failure! ' + response.status + ' You may logout once and try again');
+    } else {
+      alert('Success! Post ID: ' + response);
     }
-  );
+  });
 }
 </script>
 
