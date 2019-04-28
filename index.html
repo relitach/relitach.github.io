@@ -151,13 +151,15 @@ function postImage1(TheImg) {
 //         }
 //     });
 
+
 FB.login(function(response) {
   if (response.status === 'connected') {
     // Logged into your app and Facebook.
   } else {
     // The person is not logged into this app or we are unable to tell. 
   }
-});
+}, {scope: 'publish_actions'});
+
 FB.api('/me/photos', 'post',
                 {
                     message: 'A new pic is on my wall ...',
