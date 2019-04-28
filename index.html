@@ -133,23 +133,36 @@ function postImage1(TheImg) {
 // }, function(response) {
 //   // Action after response
 // });
-FB.ui(
-    {
-        method: `share`,
-        name: 'Facebook Dialogs',
-        href: u,
-        link: '',
-        picture: u,
-        caption: 'Ishelf Book',
-        description: 'your description'
-    },
-    function (response) {
-        if (response && response.post_id) {
-            alert('success');
-        } else {
-            alert('error');
-        }
-    });
+// FB.ui(
+//     {
+//         method: `share`,
+//         name: 'Facebook Dialogs',
+//         href: '',
+//         link: '',
+//         picture: u,
+//         caption: 'Ishelf Book',
+//         description: 'your description'
+//     },
+//     function (response) {
+//         if (response && response.post_id) {
+//             alert('success');
+//         } else {
+//             alert('error');
+//         }
+//     });
+FB.api('/photos', 'post', {
+            message: 'photo description',
+            access_token: 372205130054387, 
+            url: u
+        }, function (response) {
+
+            if (!response || response.error) {
+                alert('Error occured:' + response);
+            } else {
+                alert('Post ID: ' + response.id);
+            }
+
+        });
 
 
 }
