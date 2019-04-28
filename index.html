@@ -101,7 +101,7 @@
   <img width=300 height=400 id="my_image" src="http://smpn14-bandung.sch.id/images/loader.gif" >
 </div>
 <br>
-<div id="shareBtn" class="button button1" onclick="postImage1()">שתף תמונה</div>
+<div id="shareBtn" class="button button1" onclick="postImage1(my_image)">שתף תמונה</div>
 <br>
 
 <script>
@@ -115,17 +115,18 @@
   <br>     
 <script>
 // POST A IMAGE WITH DIALOG using FB.api
-function postImage1() {
+function postImage1(TheImg) {
+  u=TheImg.src;
   FB.ui({
   method: 'share_open_graph',
   action_type: 'og.shares',
   display: 'popup',
   action_properties: JSON.stringify({
     object: {
-      'og:url': 'https://www.facebook.com/RelitachIL/',
+      'og:url': '',
       'og:title': '',
       'og:description': '',
-      'og:image': 'http://static.dezeen.com/uploads/2013/03/dezeen_Sergio-concept-car-by-Pininfarina_ss_4.jpg'
+      'og:image': u
     }
   })
 }, function(response) {
