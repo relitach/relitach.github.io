@@ -2,13 +2,38 @@
 <head>
   <title>Smart Mirror</title>
   <style type="text/css">
-    body {
+    .body {
         background-color: #f0f0f2;
         margin: 0;
         padding: 0;
         font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
         
     }
+    .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button1 {
+  background-color: #008CBA;
+  color: white;
+}
+.button1:hover {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+
 
     </style>
 </head>
@@ -72,6 +97,10 @@
   <!-- <img width=300 height=400 id="my_image" src="http://smpn14-bandung.sch.id/images/loader.gif" onclick="fbs_click(this)"> -->
   <img width=300 height=400 id="my_image" src="http://smpn14-bandung.sch.id/images/loader.gif" onclick="postImage1()">
 </div>
+<br>
+  <br>
+<div id="shareBtn" class="button button1">שתף תמונה</div>
+
 
 <script>
   function fbs_click(TheImg) {
@@ -102,7 +131,7 @@ function postImage1() {
     // var file = document.getElementById('upload-photo-form-file');
     // file.setAttribute('value', "/Users/nseo/Desktop/test_title_03.gif")
 
-    
+
     form.submit();
   });
 }
