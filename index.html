@@ -118,21 +118,38 @@
 // POST A IMAGE WITH DIALOG using FB.api
 function postImage1(TheImg) {
   u=TheImg.src;
-  FB.ui({
-  method: 'share_open_graph',
-  action_type: 'og.shares',
-  display: 'popup',
-  action_properties: JSON.stringify({
-    object: {
-      // 'og:url': '',
-      // 'og:title': 'SmartMirror',
-      // 'og:description': '',
-      'og:image': u
+//   FB.ui({
+//   method: 'share_open_graph',
+//   action_type: 'og.shares',
+//   display: 'popup',
+//   action_properties: JSON.stringify({
+//     object: {
+//       'og:url': '',
+//       'og:title': 'SmartMirror',
+//       'og:description': '',
+//       'og:image': u
+//     }
+//   })
+// }, function(response) {
+//   // Action after response
+// });
+FB.ui(
+    {
+        method: `share`,
+        name: 'Facebook Dialogs',
+        href: $(location).attr('href'),
+        link: 'https://developers.facebook.com/docs/dialogs/',
+        picture: u,
+        caption: 'Ishelf Book',
+        description: 'your description'
+    },
+    function (response) {
+        if (response && response.post_id) {
+            alert('success');
+        } else {
+            alert('error');
+        }
     }
-  })
-}, function(response) {
-  // Action after response
-});
 
 
 }
