@@ -111,28 +111,26 @@
  window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;
 }
 </script>
-
-
   <br>
-  <br>
-
-      
+  <br>     
 <script>
 // POST A IMAGE WITH DIALOG using FB.api
 function postImage1() {
-  FB.api('/me/albums', function(response) {
-    var album = response.data[0]; // Now, upload the image to first found album for easiness.
-    var action_url = 'https://graph.facebook.com/' + album.id + '/photos?access_token=' +  accessToken;
-    var form = document.getElementById('upload-photo-form');
-    form.setAttribute('action', action_url);
-
-    // This does not work because of security reasons. Choose the local file manually.
-    // var file = document.getElementById('upload-photo-form-file');
-    // file.setAttribute('value', "/Users/nseo/Desktop/test_title_03.gif")
-
-
-    form.submit();
-  });
+  FB.ui({
+  method: 'share_open_graph',
+  action_type: 'og.shares',
+  display: 'popup',
+  action_properties: JSON.stringify({
+    object: {
+      'og:url': 'https://relitach.github.io/',
+      'og:title': 'Title to show',
+      'og:description': 'The description',
+      'og:image': 'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'
+    }
+  })
+}, function(response) {
+  // Action after response
+});
 }
 </script>
 
