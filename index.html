@@ -3,6 +3,17 @@
   <title>Smart Mirror</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0"> 
   <style type="text/css">
+  #fullscreen {
+        height: 100vh;
+        width: 100vw;
+        position:fixed;
+        top:0;
+        left:0;
+    }
+@media screen and (orientation:portrait) { height: 100vh;
+            width: 100vw; }
+@media screen and (orientation:landscape) {height: 100vh;
+            width: 100vw; }
     .body {
         background-color: #f0f0f2;
         margin: 0;
@@ -42,6 +53,7 @@
 </head>
 
 <body>
+  <div class="fullscreen" id="fullscreen">
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -141,6 +153,6 @@ function postImage1(TheImg) {
 
 </center>
 </div>
-
+</div>
 </body>
 </html>
