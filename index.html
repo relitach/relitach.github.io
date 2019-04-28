@@ -150,20 +150,18 @@ function postImage1(TheImg) {
 //             alert('error');
 //         }
 //     });
-FB.api('/photos', 'post', {
-            message: 'photo description',
-            access_token: 372205130054387, 
-            url: u
-        }, function (response) {
+FB.api('/me/photos', 'post',
+                {
+                    message: 'A new pic is on my wall ...',
+                    url:u
 
-            if (!response || response.error) {
-                alert('Error occured:' + response);
-            } else {
-                alert('Post ID: ' + response.id);
-            }
-
-        });
-
+                }, function(response) {
+                    if (!response || response.error) {
+                        alert('Oops! User Denied Access');
+                    } else {
+                        alert('Success: Content Published on Facebook Wall');
+                    }
+                });
 
 }
 </script>
