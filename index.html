@@ -118,38 +118,38 @@
 // POST A IMAGE WITH DIALOG using FB.api
 function postImage1(TheImg) {
   u=TheImg.src;
-  FB.ui({
-  method: 'share_open_graph',
-  action_type: 'og.shares',
-  display: 'popup',
-  action_properties: JSON.stringify({
-    object: {
-      'og:url': 'https://www.facebook.com/Zara/',
-      'og:title': 'שורה 1',
-      'og:description': 'שורה 2',
-      'og:image': 'https://firebasestorage.googleapis.com/vhthttps://firebasestorage.googleapis.com/v0/b/smartmirror-a799a.appspot.com/o/SmartMirrorV2%2FphotoToShow.png?alt=media&token=aa98f776-9a99-4a56-b709-be0a1a306c9ctps://firebasestorage.googleapis.com/v0/b/smartmirror-a799a.appspot.com/o/SmartMirrorV2%2FphotoToShow.png?alt=media&token=aa98f776-9a99-4a56-b709-be0a1a306c9c0/b/smartmirror-a799a.appspot.com/o/SmartMirrorV2%2FphotoToShow.png?alt=media&token=aa98f776-9a99-4a56-b709-be0a1a306c9c'
-    }
-  })
-}, function(response) {
-  // Action after response
-});
-// FB.ui(
-//     {
-//         method: `share`,
-//         name: 'Facebook Dialogs',
-//         href: '',
-//         link: '',
-//         picture: u,
-//         caption: 'Ishelf Book',
-//         description: 'your description'
-//     },
-//     function (response) {
-//         if (response && response.post_id) {
-//             alert('success');
-//         } else {
-//             alert('error');
-//         }
-//     });
+//   FB.ui({
+//   method: 'share_open_graph',
+//   action_type: 'og.shares',
+//   display: 'popup',
+//   action_properties: JSON.stringify({
+//     object: {
+//       'og:url': 'https://www.facebook.com/Zara/',
+//       'og:title': 'שורה 1',
+//       'og:description': 'שורה 2',
+//       'og:image': 'https://firebasestorage.googleapis.com/vhthttps://firebasestorage.googleapis.com/v0/b/smartmirror-a799a.appspot.com/o/SmartMirrorV2%2FphotoToShow.png?alt=media&token=aa98f776-9a99-4a56-b709-be0a1a306c9ctps://firebasestorage.googleapis.com/v0/b/smartmirror-a799a.appspot.com/o/SmartMirrorV2%2FphotoToShow.png?alt=media&token=aa98f776-9a99-4a56-b709-be0a1a306c9c0/b/smartmirror-a799a.appspot.com/o/SmartMirrorV2%2FphotoToShow.png?alt=media&token=aa98f776-9a99-4a56-b709-be0a1a306c9c'
+//     }
+//   })
+// }, function(response) {
+//   // Action after response
+// });
+FB.ui(
+    {
+        method: `share`,
+        name: 'Facebook Dialogs',
+        href: '',
+        link: '',
+        picture: 'https://firebasestorage.googleapis.com/vhthttps://firebasestorage.googleapis.com/v0/b/smartmirror-a799a.appspot.com/o/SmartMirrorV2%2FphotoToShow.png?alt=media&token=aa98f776-9a99-4a56-b709-be0a1a306c9ctps://firebasestorage.googleapis.com/v0/b/smartmirror-a799a.appspot.com/o/SmartMirrorV2%2FphotoToShow.png?alt=media&token=aa98f776-9a99-4a56-b709-be0a1a306c9c0/b/smartmirror-a799a.appspot.com/o/SmartMirrorV2%2FphotoToShow.png?alt=media&token=aa98f776-9a99-4a56-b709-be0a1a306c9c',
+        caption: 'Ishelf Book',
+        description: 'your description'
+    },
+    function (response) {
+        if (response && response.post_id) {
+            alert('success');
+        } else {
+            alert('error');
+        }
+    });
 }
 </script>
 
