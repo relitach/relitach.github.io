@@ -117,22 +117,29 @@
 <script>
 // POST A IMAGE WITH DIALOG using FB.api
 function postImage1(TheImg) {
+
   u=TheImg.src;
-  FB.ui({
-  method: 'share_open_graph',
-  action_type: 'og.shares',
-  display: 'popup',
-  action_properties: JSON.stringify({
-    object: {
-      'og:url': 'http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html',
-      'og:title': 'SmartMirror',
-      'og:description': '',
-      'og:image': u
-    }
-  })
-}, function(response) {
-  // Action after response
-});
+ t=TheImg.getAttribute('alt');
+ window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;
+
+
+//   FB.ui({
+//   method: 'share_open_graph',
+//   action_type: 'og.shares',
+//   display: 'popup',
+//   action_properties: JSON.stringify({
+//     object: {
+//       'og:url': 'http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html',
+//       'og:title': 'SmartMirror',
+//       'og:description': '',
+//       'og:image': u
+//     }
+//   })
+// }, function(response) {
+//   // Action after response
+// });
+
+
 // FB.ui(
 //     {
 //         method: `share`,
