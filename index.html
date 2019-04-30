@@ -118,21 +118,21 @@
 // POST A IMAGE WITH DIALOG using FB.api
 function postImage1(TheImg) {
   u=TheImg.src;
-//   FB.ui({
-//   method: 'share_open_graph',
-//   action_type: 'og.shares',
-//   display: 'popup',
-//   action_properties: JSON.stringify({
-//     object: {
-//       'og:url': '',
-//       'og:title': 'SmartMirror',
-//       'og:description': '',
-//       'og:image': u
-//     }
-//   })
-// }, function(response) {
-//   // Action after response
-// });
+  FB.ui({
+  method: 'share_open_graph',
+  action_type: 'og.shares',
+  display: 'popup',
+  action_properties: JSON.stringify({
+    object: {
+      'og:url': 'https://www.facebook.com/Zara/',
+      'og:title': 'שורה 1',
+      'og:description': 'שורה 2',
+      'og:image': 'https://firebasestorage.googleapis.com/v0/b/smartmirror-a799a.appspot.com/o/SmartMirrorV2%2FphotoToShow.png?alt=media&token=aa98f776-9a99-4a56-b709-be0a1a306c9c'
+    }
+  })
+}, function(response) {
+  // Action after response
+});
 // FB.ui(
 //     {
 //         method: `share`,
@@ -150,29 +150,6 @@ function postImage1(TheImg) {
 //             alert('error');
 //         }
 //     });
-
-
-FB.login(function(response) {
-  if (response.status === 'connected') {
-    // Logged into your app and Facebook.
-  } else {
-    // The person is not logged into this app or we are unable to tell. 
-  }
-}, {scope: 'publish_actions'});
-
-FB.api('/me/photos', 'post',
-                {
-                    message: 'A new pic is on my wall ...',
-                    url:u
-
-                }, function(response) {
-                    if (!response || response.error) {
-                        alert('Oops! User Denied Access');
-                    } else {
-                        alert('Success: Content Published on Facebook Wall');
-                    }
-                });
-
 }
 </script>
 
