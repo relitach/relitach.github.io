@@ -118,9 +118,24 @@
 // POST A IMAGE WITH DIALOG using FB.api
 function postImage1(TheImg) {
 
-  u=TheImg.src;
- t=TheImg.getAttribute('alt');
- window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;
+  FB.ui(
+  {
+    method: 'share',
+    display: 'popup',
+    href: 'https://www.facebook.com/Zara/',
+    hashtag: '#ArielHashtagTest',
+    quote: 'בדיקה אני מחליט מה לכתוב כאן מראש',
+  },
+  // callback
+  function(response) {
+    if (response && !response.error_message) {
+      alert('Posting completed.');
+    } else {
+      alert('Error while posting.');
+    }
+  }
+);
+
 
 
 //   FB.ui({
