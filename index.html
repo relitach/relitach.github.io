@@ -128,14 +128,21 @@ function postImage1(TheImg) {
   },
   // callback
   function(response) {
-    if (response && !response.error_message) {
-      alert('Posting completed.');
-    } else {
-      alert('Error while posting.');
-    }
+    // if (response && !response.error_message) {
+    //   alert('Posting completed.');
+    // } else {
+    //   alert('Error while posting.');
+    // }
   }
 );
 
+FB.ui({
+    method: 'share',
+    display: 'popup',
+    href: 'https://www.zara.com/il/',
+    hashtag: '#ArielHashtagTest',
+    quote: 'בדיקה אני מחליט מה לכתוב כאן מראש',
+  }, function(response){});
 
 
 
