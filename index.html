@@ -117,12 +117,14 @@
 <script>
 // POST A IMAGE WITH DIALOG using FB.api
 function postImage1(TheImg) {
+  u=TheImg.src;
+
 
   FB.ui(
   {
     method: 'share',
     display: 'popup',
-    href: 'https://www.facebook.com/Zara/',
+    href: u,
     hashtag: '#ArielHashtagTest',
     quote: 'בדיקה אני מחליט מה לכתוב כאן מראש',
   },
@@ -136,13 +138,6 @@ function postImage1(TheImg) {
   }
 );
 
-FB.ui({
-    method: 'share',
-    display: 'popup',
-    href: 'https://www.zara.com/il/',
-    hashtag: '#ArielHashtagTest',
-    quote: 'בדיקה אני מחליט מה לכתוב כאן מראש',
-  }, function(response){});
 
 
 
