@@ -133,14 +133,16 @@ function postImage1(TheImg) {
 // }, function(response) {
 //   // Action after response
 // });
+
+image = 'https://firebasestorage.googleapis.com/v0/b/smartmirror-a799a.appspot.com/o/SmartMirrorV2/photoToShow.png?alt=media&token=aa98f776-9a99-4a56-b709-be0a1a306c9c';
+x=image.src;
 FB.ui(
     {
         method: `share`,
         name: 'Facebook Dialogs',
         href: '',
         link: '',
-        picture: 'https://firebasestorage.googleapis.com/vhthttps://firebasestorage.googleapis.com/v0/b/smartmirror-a799a.appspot.com/o/SmartMirrorV2%2FphotoToShow.png?alt=media&token=aa98f776-9a99-4a56-b709-be0a1a306c9ctps://firebasestorage.googleapis.com/v0/b/smartmirror-a799a.appspot.com/o/SmartMirrorV2%2FphotoToShow.png?alt=media&token=aa98f776-9a99-4a56-b709-be0a1a306c9c0/b/smartmirror-a799a.appspot.com/o/SmartMirrorV2%2FphotoToShow.png?alt=media&token=aa98f776-9a99-4a56-b709-be0a1a306c9c',
-        caption: 'Ishelf Book',
+        picture: x,
         description: 'your description'
     },
     function (response) {
