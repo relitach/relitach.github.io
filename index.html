@@ -80,6 +80,12 @@
   document.getElementById("my_image").src = picURL;
   // alert(picURL);
 });
+
+database.ref('/pic_id_to_link/' + 'Test').once('value').then(function(snapshot) {
+  var testURL = snapshot.val();
+  document.getElementById("test_image").src = testURL;
+  // alert(picURL);
+});
   console.log(database);
   </script>
 
@@ -117,8 +123,8 @@
 <script>
 // POST A IMAGE WITH DIALOG using FB.api
 function postImage1(TheImg) {
-  u=TheImg.src;
-
+  //u=TheImg.src;
+  u=test_image.src;
 
   FB.ui(
   {
