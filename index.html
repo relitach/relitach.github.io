@@ -122,7 +122,7 @@ function onShareClick(photo){
     navigator.share({
         title: 'Checkout this funny photo',
         text: '',
-        url: window.location.origin + '/' + photo.id 
+        url: window.location.origin + '/' + photo 
     })
     .then(() => console.log('Successfully shared'))
     .catch((error) => console.log('Error sharing:', error));
