@@ -117,12 +117,13 @@
   <br>     
 <script>
 
-function onShareClick(photo){
+function onShareClick(TheImg){
     // WEB SHARE API
+    u=TheImg.src;
     navigator.share({
         title: 'Checkout this funny photo',
         text: '',
-        url: window.location.origin + '/' + photo 
+        url: u 
     })
     .then(() => console.log('Successfully shared'))
     .catch((error) => console.log('Error sharing:', error));
