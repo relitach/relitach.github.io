@@ -103,7 +103,7 @@
   <img width=580.8 height=775.2 id="my_image" src="http://smpn14-bandung.sch.id/images/loader.gif" >
 </div>
 <br>
-<div id="shareBtn" class="button button1" onclick="postImage1(my_image)"><font size="22">שתף תמונה</font></div>
+<div id="shareBtn" class="button button1" onclick="onShareClick(my_image)"><font size="22">שתף תמונה</font></div>
 <br>
 
 <script>
@@ -116,6 +116,17 @@
   <br>
   <br>     
 <script>
+
+function onShareClick(photo){
+    // WEB SHARE API
+    navigator.share({
+        title: 'Checkout this funny photo',
+        text: '',
+        url: window.location.origin + '/' + photo.id 
+    })
+    .then(() => console.log('Successfully shared'))
+    .catch((error) => console.log('Error sharing:', error));
+}
 // POST A IMAGE WITH DIALOG using FB.api
 function postImage1(TheImg) {
   u=TheImg.src;
