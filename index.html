@@ -106,6 +106,16 @@
 <div id="shareBtn" class="button button1" onclick="postImage1(my_image)"><font size="22">שתף תמונה</font></div>
 <br>
 
+
+<share-button share-url="http://event.getout-app.com/-LfuOL7pSsMq5AMKnRHs" ng-if="vm.shareUrl" class="ng-scope ng-isolate-scope"><div class="pull-left add-to-calendar-wrapper">
+    <span uib-dropdown="" dropdown-append-to-body="true" class="dropdown">
+      <img src="app/assets/share.svg" uib-dropdown-toggle="" class="svg share-icon dropdown-toggle" aria-haspopup="true" aria-expanded="true">
+      
+    </span>
+</div>
+</share-button>
+
+
 <script>
   function fbs_click(TheImg) {
   u=TheImg.src;
@@ -116,6 +126,14 @@
   <br>
   <br>     
 <script>
+
+  <share-button share-url="http://event.getout-app.com/-LfuOL7pSsMq5AMKnRHs" ng-if="vm.shareUrl" class="ng-scope ng-isolate-scope"><div class="pull-left add-to-calendar-wrapper">
+      <span uib-dropdown="" dropdown-append-to-body="true" class="dropdown">
+        <img src="app/assets/share.svg" uib-dropdown-toggle="" class="svg share-icon dropdown-toggle" aria-haspopup="true" aria-expanded="true">
+        
+      </span>
+</div>
+</share-button>
 
 function onShareClick(TheImg){
     // WEB SHARE API
